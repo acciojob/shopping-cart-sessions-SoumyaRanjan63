@@ -24,16 +24,18 @@ function renderProducts() {
 // Render cart list
 function renderCart() {
   cartList.innerHTML = "";
-  
+
   for (let i = 0; i < sessionStorage.length; i++) {
     let key = sessionStorage.key(i);
     let product = JSON.parse(sessionStorage.getItem(key));
+    console.log("Retrieved product from sessionStorage:", product);
 
     const li = document.createElement('li');
     li.innerHTML = `${product.name} - $${product.price} <button class="remove-from-cart-btn" data-id="${key}">Remove</button>`;
     cartList.appendChild(li);
   }
 }
+
 
 // Add item to cart
 function addToCart(productId) {
