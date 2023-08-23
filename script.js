@@ -10,6 +10,7 @@ const products = [
 // DOM elements
 const productList = document.getElementById("product-list");
 const cartList = document.getElementById("cart-list");
+const clearBtn=document.getElementById("clear-cart-btn");
 
 // Render product list
 function renderProducts() {
@@ -70,6 +71,9 @@ cartList.addEventListener("click", (event) => {
     removeFromCart(productId);
   }
 });
+clearBtn.addEventListener("click",(event)=>{
+	clearCart();
+})
 
 // Initial render
 renderProducts();
